@@ -17,8 +17,8 @@ interface Main {
             oilPriceArray[i] = Integer.parseInt(st.nextToken());
         }
 
-        int minPrice = 100000000;
-        int result = 0;
+        int minPrice = oilPriceArray[0];
+        long result = 0;
         for (int i = 0; i < lengthArray.length; i++) {
             if (oilPriceArray[i] < minPrice) {
                 minPrice = oilPriceArray[i];
