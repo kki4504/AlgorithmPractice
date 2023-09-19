@@ -4,22 +4,22 @@ import java.io.*;
 interface Main {
     static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        final int N = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
 
-        List<Integer> ropeQueue = new ArrayList<>();
+        int[] ropeArray = new int[N];
         for (int i = 0; i < N; i++) {
-            ropeQueue.add(Integer.parseInt(br.readLine()));
+            ropeArray[i] = Integer.parseInt(br.readLine());
         }
 
-        ropeQueue.sort(Comparator.naturalOrder());
+        Arrays.sort(ropeArray);
         int result = 0;
 
-        for (int i = 0; i < N; i++) {
-            int sum = ropeQueue.get(0) * ropeQueue.size();
+        for (int i = 0; i < ropeArray.length; i++) {
+            int sum = ropeArray[i] * N;
             if (result < sum) {
                 result = sum;
             }
-            ropeQueue.remove(0);
+            N --;
         }
 
         System.out.println(result);
